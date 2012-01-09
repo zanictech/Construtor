@@ -1,12 +1,38 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.prime.com.tr/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Construtor</title>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <h:form>
+            <p:growl id="messages"/>
+
+            <p:menubar>
+                <p:submenu label="Venda">
+                    <p:submenu label="Vender">
+                        <p:menuitem value="Balcão" url="#"/>
+                        <p:menuitem value="Pessoa Física" url="#"/>
+                        <p:menuitem value="Pessoa Jurídica" url="#"/>
+                    </p:submenu>
+                    <p:separator />
+                    <p:menuitem value="Sair" url="#" />
+                </p:submenu>
+
+                <p:submenu label="Estoque" icon="">
+                    <p:menuitem value="Entrada" url="#"></p:menuitem>
+                    <p:menuitem value="Saída" url="#"></p:menuitem>
+                </p:submenu>
+                
+                <p:submenu label="Configurações">
+                    <p:menuitem value="Backup" url="#"></p:menuitem>
+                </p:submenu>
+
+            </p:menubar>
+
+        </h:form>
     </h:body>
 </html>
 
