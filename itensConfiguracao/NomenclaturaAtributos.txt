@@ -1,0 +1,10 @@
+Nomenclatura de atributos:
+
+A letra inicial de cada atributo representa o seu tipo para o sistema.
+Assim, atributos iniciados com:
+
+c => Atributos String;
+d => Atributos Data;
+m => Atributos Monetários;
+b => Atributos Booleanos;
+n => Atributos Números;
