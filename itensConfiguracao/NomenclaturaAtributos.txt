@@ -8,3 +8,4 @@ d => Atributos Data;
 m => Atributos Monetários;
 b => Atributos Booleanos;
 n => Atributos Números;
+p => Atributos Porcentagem;
