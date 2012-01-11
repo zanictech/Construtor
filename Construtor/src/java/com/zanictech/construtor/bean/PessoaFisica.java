@@ -3,6 +3,7 @@ package com.zanictech.construtor.bean;
 import com.zanictech.construtor.bean.basebean.BaseBean;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 
 /**
  *
@@ -21,6 +22,7 @@ public class PessoaFisica extends BaseBean {
     private long fkEnderecoEntrega;
     private String cNumeroEntrega;
     private String cObservacao;
+    private Date dDataCadastro;
     
     private Endereco endereco;
     private Endereco enderecoEntrega;
@@ -28,7 +30,7 @@ public class PessoaFisica extends BaseBean {
     public PessoaFisica() {
     }
 
-    public PessoaFisica(String cCpf, String cRg, String cNome, String cTelefone, String cCelular, String cEmail, String cNumero, String cNumeroEntrega, String cObservacao, Endereco endereco, Endereco enderecoEntrega) {
+    public PessoaFisica(String cCpf, String cRg, String cNome, String cTelefone, String cCelular, String cEmail, String cNumero, String cNumeroEntrega, String cObservacao, Date dDataCadastro, Endereco endereco, Endereco enderecoEntrega) {
         this.cCpf = cCpf;
         this.cRg = cRg;
         this.cNome = cNome;
@@ -40,22 +42,24 @@ public class PessoaFisica extends BaseBean {
         this.fkEnderecoEntrega = enderecoEntrega.getId();
         this.cNumeroEntrega = cNumeroEntrega;
         this.cObservacao = cObservacao;
+        this.dDataCadastro = dDataCadastro;
         this.endereco = endereco;
         this.enderecoEntrega = enderecoEntrega;
     }
     
     public PessoaFisica(ResultSet rs) throws SQLException {
-        this.cCpf = rs.getString("");
-        this.cRg = rs.getString("");
-        this.cNome = rs.getString("");
-        this.cTelefone = rs.getString("");
-        this.cCelular = rs.getString("");
-        this.cEmail = rs.getString("");
+        this.cCpf = rs.getString("cCpf");
+        this.cRg = rs.getString("cRg");
+        this.cNome = rs.getString("cNome");
+        this.cTelefone = rs.getString("cTelefone");
+        this.cCelular = rs.getString("cCelular");
+        this.cEmail = rs.getString("cEmail");
         this.fkEndereco = rs.getLong("fkEndereco");
-        this.cNumero = rs.getString("");
+        this.cNumero = rs.getString("cNumero");
         this.fkEnderecoEntrega = rs.getLong("fkEnderecoEntrega");
-        this.cNumeroEntrega = rs.getString("");
-        this.cObservacao = rs.getString("");
+        this.cNumeroEntrega = rs.getString("cNumeroEntrega");
+        this.cObservacao = rs.getString("cObservacao");
+        this.dDataCadastro = rs.getDate("dDataCadastro");
         
         // TODO: Implementar locate da entidade endereço
     }
@@ -161,6 +165,14 @@ public class PessoaFisica extends BaseBean {
 
     public void setcTelefone(String cTelefone) {
         this.cTelefone = cTelefone;
+    }
+
+    public Date getdDataCadastro() {
+        return dDataCadastro;
+    }
+
+    public void setdDataCadastro(Date dDataCadastro) {
+        this.dDataCadastro = dDataCadastro;
     }
 
     public Endereco getEndereco() {

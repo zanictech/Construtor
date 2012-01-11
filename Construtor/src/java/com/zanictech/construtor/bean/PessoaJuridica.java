@@ -3,6 +3,7 @@ package com.zanictech.construtor.bean;
 import com.zanictech.construtor.bean.basebean.BaseBean;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 
 /**
  *
@@ -24,6 +25,7 @@ public class PessoaJuridica extends BaseBean{
     private long fkEnderecoEntrega;
     private String cNumeroEntrega;
     private String cObservacao;
+    private Date dDataCadastro;
     
     private Endereco endereco;
     private Endereco enderecoEntrega;
@@ -31,7 +33,7 @@ public class PessoaJuridica extends BaseBean{
     public PessoaJuridica() {
     }
 
-    public PessoaJuridica(String cCnpj, String cInscMunicipal, String cInscEstadual, String cRazaoSocial, String cNomeFantasia, String cContato, String cTelefone, String cCelular, String cEmail, String cNumero, String cNumeroEntrega, String cObservacao, Endereco endereco, Endereco enderecoEntrega) {
+    public PessoaJuridica(String cCnpj, String cInscMunicipal, String cInscEstadual, String cRazaoSocial, String cNomeFantasia, String cContato, String cTelefone, String cCelular, String cEmail, String cNumero, String cNumeroEntrega, String cObservacao, Date dDataCadastro, Endereco endereco, Endereco enderecoEntrega) {
         this.cCnpj = cCnpj;
         this.cInscMunicipal = cInscMunicipal;
         this.cInscEstadual = cInscEstadual;
@@ -46,6 +48,7 @@ public class PessoaJuridica extends BaseBean{
         this.fkEnderecoEntrega = enderecoEntrega.getId();
         this.cNumeroEntrega = cNumeroEntrega;
         this.cObservacao = cObservacao;
+        this.dDataCadastro = dDataCadastro;
         this.endereco = endereco;
         this.enderecoEntrega = enderecoEntrega;
     }
@@ -65,6 +68,7 @@ public class PessoaJuridica extends BaseBean{
         this.fkEnderecoEntrega = rs.getLong("fkEnderecoEntrega");
         this.cNumeroEntrega = rs.getString("cNumeroEntrega");
         this.cObservacao = rs.getString("cObservacao");
+        this.dDataCadastro = rs.getDate("dDataCadastro");
         
         // TODO: Implementar locate do endereço
     }
@@ -194,6 +198,14 @@ public class PessoaJuridica extends BaseBean{
 
     public void setcTelefone(String cTelefone) {
         this.cTelefone = cTelefone;
+    }
+
+    public Date getdDataCadastro() {
+        return dDataCadastro;
+    }
+
+    public void setdDataCadastro(Date dDataCadastro) {
+        this.dDataCadastro = dDataCadastro;
     }
 
     public Endereco getEndereco() {
